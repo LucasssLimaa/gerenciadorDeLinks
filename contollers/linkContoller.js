@@ -2,7 +2,7 @@ const Link = require('../models/Link');
 
 const redirect = async (req, res, next) => {
 
-    let title = req.params.title; // "req.params.title" pega o valor que vem logo depois da "/"
+    let title = req.params.title;
 
     try{
         let doc = await Link.findOneAndUpdate({title}, {$inc: {click: 1}});
@@ -50,7 +50,6 @@ const deleteLink = async (req, res) => {
 
     try {
         await Link.findByIdAndDelete(id);
-        //res.send(id);
         res.redirect('/');
     }catch(error) {
         res.status(404).send(error);

@@ -17,7 +17,6 @@
         <h1 class="text-center m-5 display-1">Editar Link</h1>
 
         <form class="d-flex flex-column mb-3 mx-auto" style="width: 30%" action="/edit/<%=body.id%>" method="POST">
-            <!--Como o post pega um formulário do insomnia, utiliza-se a tag "form" no html, para que o usuário possa inserir os dados-->
             <input class="field border border-white p-1 m-2 rounded fs-4" name="title" placeholder="Título" required value="<%=body.title%>">
             <input class="field border border-white p-1 m-2 rounded fs-4" name="description" placeholder="Descrição" value="<%=body.description%>">
             <input class="field border border-white p-1 m-2 rounded fs-4" name="url" placeholder="URL" required value="<%=body.url%>">

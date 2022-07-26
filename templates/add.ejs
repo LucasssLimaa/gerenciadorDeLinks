@@ -12,7 +12,7 @@
     <div class="container">
         <h1 class="text-center m-5 display-1">Crie um link</h1>
 
-        <form class="d-flex flex-column mb-3 mx-auto" action="/" method="POST" style="width: 30%;"> <!--Como o post pega um formulário do insomnia, utiliza-se a tag "form" no html, para que o usuário possa inserir os dados-->
+        <form class="d-flex flex-column mb-3 mx-auto" action="/" method="POST" style="width: 30%;">
             <input class="field border border-white p-1 m-2 rounded fs-4" name="title" placeholder="Título" required value="<%=body.title%>">
             <input class="field border border-white p-1 m-2 rounded fs-4" name="description" placeholder="Descrição" value="<%=body.description%>">
             <input class="field border border-white p-1 m-2 rounded fs-4" name="url" placeholder="URL" required value="<%=body.url%>">
