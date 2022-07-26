@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width='device-width', initial-scale=1.0">
+    <title>Redirection</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+</head>
+<body class="bg-dark text-white">
+
+    <div class="container">
+        <h1 class="text-center m-5 display-1">Crie um link</h1>
+
+        <form class="d-flex flex-column mb-3 mx-auto" action="/" method="POST" style="width: 30%;"> <!--Como o post pega um formulário do insomnia, utiliza-se a tag "form" no html, para que o usuário possa inserir os dados-->
+            <input class="field border border-white p-1 m-2 rounded fs-4" name="title" placeholder="Título" required value="<%=body.title%>">
+            <input class="field border border-white p-1 m-2 rounded fs-4" name="description" placeholder="Descrição" value="<%=body.description%>">
+            <input class="field border border-white p-1 m-2 rounded fs-4" name="url" placeholder="URL" required value="<%=body.url%>">
+            <button class="btn btn-outline-success p-1 mt-4 rounded mx-auto fs-4" style="width: 25%;">Salvar</button>
+        </form>
+
+       <h3><%=error.message%></h3>
+    </div>
+
+</body>
+</html>

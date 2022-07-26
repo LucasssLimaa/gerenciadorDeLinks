@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Links</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+</head>
+
+<body class="bg-dark text-white">
+
+    <div class="container">
+
+        <h1 class="text-center display-1">Links</h1>
+        <div class="text-center">
+            <a class="btn btn-outline-light p-2 m-4 fs-4" href="/add">Adicionar Link</a>
+        </div>
+
+        <%for(let i=0; i < links.length; i++) { %>
+
+            <div class="card bg-dark border m-4" id='<%=links[i]._id%>'>
+                <form class="d-flex align-items-center justify-content-between" method="POST"
+                    action="/?_method=DELETE">
+                    <div class="d-flex flex-column" style="width: 50%;">
+                        <h2 class="display-5 p-2">
+                            <%=links[i].title%>
+                        </h2>
+                        <div class="fs-3 p-2 pt-0">
+                            <%=links[i].description%>
+                        </div>
+                        <div class="fs-4 p-2 pt-0" style="opacity: 0.5;">
+                            <%=links[i].url%>
+                        </div>
+                        <div class="text-info fs-4 p-2 pt-0" style="opacity: 0.5;">
+                            <i class="material-icons">
+                            bar_chart</i>
+                            Clicks: <%=links[i].click%>
+                        </div>
+                    </div>
+                    <div class="d-flex justify-content-center m-2 flex-column" style="width: 10%;">
+                        <input name="id" value='<%=links[i]._id%>' hidden>
+                        <a class="btn btn-outline-success m-2" href="/<%=links[i].title%>">Abrir</a>
+                        <a class="btn btn-outline-info m-2" href="/edit/<%=links[i]._id%>">Editar</a>
+                        <button class="btn btn-outline-danger m-2" type="submit">Delete</button>
+                    </div>
+                </form>
+            </div>
+
+            <%}%>
+    </div>
+
+</body>
+
+</html>
