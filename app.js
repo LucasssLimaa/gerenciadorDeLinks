@@ -1,6 +1,6 @@
 const expres = require('express');
 const app = expres();
-const port = process.env.PORT || 3000;
+const port = 80 || 3000;
 const mongoose = require('mongoose');
 const path = require('path');
 const linkRoute = require('./routes/linkRoute');
