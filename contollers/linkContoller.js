@@ -5,7 +5,7 @@ const redirect = async (req, res, next) => {
     let title = req.params.title; // "req.params.title" pega o valor que vem logo depois da "/"
 
     try{
-        let doc = await Link.findOne({title});
+        let doc = await Link.findOneAndUpdate({title}, {$inc: {click: 1}});
         console.log(doc);
         if(doc) {
             res.redirect(doc.url);
